@@ -23,6 +23,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+            <intent-filter>
+                <!-- This will make our app available as an option to other apps whenever this uri is what gets 'called' -->
+                <data android:host="ramanie.com"
+                    android:scheme="https"/>
+                <!-- with the category below we make sure that our activity can still be launched even
+                 if the other app doesn't specify that our activity should be launched -->
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- the BROWSABLE CATEGORY WILL STATE THAT OUR APP CAN BE OPEN BY THE BROWSER -->
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
